@@ -1,0 +1,126 @@
+/* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
+:root {
+    --color-primario: #0D3C61; /* Azul corporativo, serio y confiable */
+    --color-acento: #1E88E5;   /* Azul más brillante para botones y enlaces */
+    --color-texto-principal: #212121; /* Gris oscuro para texto, mejor que negro puro */
+    --color-texto-secundario: #FFFFFF; /* Blanco para texto sobre fondos oscuros */
+    --color-fondo: #FFFFFF;
+    --fuente-titulos: 'Forum', serif; /* <-- NUEVA FUENTE PARA TÍTULOS */
+    --fuente-texto: 'Inter', sans-serif; /* <-- FUENTE PARA PÁRRAFOS */
+}
+
+
+body {
+    font-family: var(--fuente-texto); /* Aplicamos 'Inter' a todo el texto por defecto */
+    color: var(--color-texto-principal);
+    background-color: var(--color-fondo);
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. ESTILOS DEL ENCABEZADO */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    position: fixed; /* Dejamos el menú fijo arriba */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Efecto 'blur' para el fondo del menú */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fuente-titulos); /* <-- AÑADE ESTA LÍNEA */
+    font-weight: 900; /* Lo mantenemos para que 'Inter' (si falla Forum) se vea grueso */
+    font-size: 2.2em; /* Un poco más grande para que luzca la nueva fuente */
+    color: var(--color-primario);
+}
+
+
+.main-nav a {
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-acento);
+}
+
+/* 3. ESTILOS DE LA SECCIÓN DE INICIO (HERO) */
+.hero-section {
+    /* IMPORTANTE: Reemplaza esta URL con la foto real del candidato */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1520065786237-3252d38a04a6?q=80&w=2670&auto=format&fit=crop' );
+    
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-texto-secundario);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-family: var(--fuente-titulos); /* <-- AÑADE ESTA LÍNEA */
+    font-size: 5.5em; /* Ajustamos el tamaño para la nueva fuente */
+    font-weight: 400; /* La fuente Forum no necesita 'bold', su diseño ya es fuerte */
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); 
+}
+.hero-subtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.hero-button {
+    background-color: var(--color-acento);
+    color: var(--color-texto-secundario);
+    padding: 18px 35px;
+    border-radius: 50px; /* Botón con bordes redondeados */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+.hero-button:hover {
+    background-color: #1976D2; /* Azul un poco más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de crecimiento sutil */
+}
+
+/* 4. ESTILOS DEL PIE DE PÁGINA */
+.main-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
